@@ -9,8 +9,8 @@ const app = express();
 //app.use(logger);
 
 //Body Parser Middleware
-app.use(express.json()); //allows the use of raw JSON
-app.use(express.urlencoded({ extended: false })); //handle form submissions
+app.use(express.json()); //parses incoming requests with JSON payloads (basically turns req data into JSON).
+app.use(express.urlencoded({ extended: false })); //Turns body into (parses) urlencoded data then parses into querystring library & creates a req.body object
 
 //Set a static folder
 app.use(express.static(path.join(__dirname, "public")));
